@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, type ViewStyle } from 'react-native'
 
 interface Props {
-  children: string
+  children: JSX.Element
   style?: ViewStyle
 }
 
