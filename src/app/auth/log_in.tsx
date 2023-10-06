@@ -23,11 +23,19 @@ const LogIn = (): JSX.Element => {
           style={styles.input}
           value={email}
           onChangeText={(text) => { setEmail(text) }}
+          autoCapitalize='none'
+          keyboardType='email-address'
+          placeholder='Email Address'
+          textContentType='emailAddress'
         />
         <TextInput
           style={styles.input}
           value={password}
           onChangeText={(text) => { setPassword(text) }}
+          autoCapitalize='none'
+          secureTextEntry
+          placeholder='Password'
+          textContentType='password'
         />
         <Button label='Submit' onPress={handlePress} />
         <View style={styles.footer}>
