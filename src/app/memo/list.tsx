@@ -44,9 +44,7 @@ const List = (): JSX.Element => {
   return (
     <View style={styles.container}>
       <View>
-        <MemoListItem />
-        <MemoListItem />
-        <MemoListItem />
+        {memos.map((memo) => <MemoListItem memo={memo} />)}
       </View>
       <CircleButton onPress={handlePress}>
         <Icon name='plus' size={40} color='#ffffff' />
