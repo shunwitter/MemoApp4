@@ -13,8 +13,8 @@ const handlePress = (email: string, password: string): void => {
   // 会員登録
   console.log(email, password)
   createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredintial) => {
-      console.log(userCredintial.user.uid)
+    .then((userCredential) => {
+      console.log(userCredential.user.uid)
       router.replace('/memo/list')
     })
     .catch((error) => {
