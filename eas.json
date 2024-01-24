@@ -1,0 +1,23 @@
+{
+  "build": {
+    "production": {
+      "env": {
+        "EXPO_PUBLIC_FB_API_KEY": "",
+        "EXPO_PUBLIC_FB_AUTH_DOMAIN": "",
+        "EXPO_PUBLIC_FB_PROJECT_ID": "",
+        "EXPO_PUBLIC_FB_STORAGE_BUCKET": "",
+        "EXPO_PUBLIC_FB_MESSAGING_SENDER_ID": "",
+        "EXPO_PUBLIC_FB_APP_ID": ""
+      }
+    },
+    "preview": {
+      "extends": "production",
+      "ios": {
+        "simulator": true
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    }
+  }
+}
