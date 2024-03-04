@@ -1,7 +1,13 @@
 import { initializeApp } from 'firebase/app'
-import { initializeAuth, getReactNativePersistence } from 'firebase/auth'
+// tsconfig.json で index.rn.d.ts を指定しているため browserLocalPersistence を名前解決できない
+import { initializeAuth, getReactNativePersistence, browserLocalPersistence } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage'
+import { Platform } from 'react-native'
+
+const persistence = Platform.OS === 'web'
+  ? [browserLocalPersistence]
+  : getReactNativePersistence(ReactNativeAsyncStorage)
 
 const firebaseConfig = {
   apiKey: process.env.EXPO_PUBLIC_FB_API_KEY,
@@ -14,7 +20,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 const auth = initializeAuth(app, {
-  persistence: getReactNativePersistence(ReactNativeAsyncStorage)
+  persistence
 })
 const db = getFirestore(app)
 
