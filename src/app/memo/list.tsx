@@ -10,7 +10,7 @@ import LogOutButton from '../../components/LogOutButton'
 import { db, auth } from '../../config'
 import { type Memo } from '../../../types/memo'
 
-const handlePress = (): void => {
+const handlePress = () => {
   router.push('/memo/create')
 }
 
